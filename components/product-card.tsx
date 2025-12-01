@@ -32,13 +32,13 @@ export default function ProductCard({ product }: { product: any }) {
         <h3 className="text-2xl font-bold text-foreground mb-3">{product.title}</h3>
 
         {/* Description */}
-        <p className="text-muted-foreground mb-6 flex-grow">{product.description}</p>
+        <p className="text-muted-foreground mb-6 grow">{product.description}</p>
 
         {/* Features */}
         <div className="space-y-2 mb-6">
           {product.features.slice(0, 2).map((feature: string) => (
             <div key={feature} className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-accent flex-shrink-0" />
+              <CheckCircle2 size={16} className="text-accent shrink-0" />
               <span className="text-sm text-muted-foreground">{feature}</span>
             </div>
           ))}
