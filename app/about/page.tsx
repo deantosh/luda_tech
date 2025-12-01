@@ -92,7 +92,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance"
           >
-            Transforming Ideas Into <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Reality</span>
+            Transforming Ideas Into <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Digital Reality</span>
           </motion.h1>
 
           <motion.p
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 px-4 bg-gradient-to-b from-background via-primary/5 to-background">
+      <section className="py-24 px-4 bg-linear-to-b from-background via-primary/5 to-background">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Mission */}
@@ -165,7 +165,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center mb-4">
                     <Icon size={24} className="text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
@@ -178,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-background via-accent/5 to-background">
+      <section className="py-24 px-4 bg-linear-to-b from-background via-accent/5 to-background">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -234,7 +234,7 @@ export default function AboutPage() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent -translate-x-1/2" />
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-primary to-accent -translate-x-1/2" />
 
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
