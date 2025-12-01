@@ -30,7 +30,7 @@ export default function FeaturedProducts() {
   ]
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-background via-primary/5 to-background">
+    <section className="py-24 px-4 bg-linear-to-b from-background via-primary/5 to-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -57,16 +57,16 @@ export default function FeaturedProducts() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className={`relative p-8 rounded-2xl bg-gradient-to-br ${product.color} border border-border hover:border-accent/50 transition-all duration-300 h-full`}>
+                <div className={`relative p-8 rounded-2xl bg-linear-to-br ${product.color} border border-border hover:border-accent/50 transition-all duration-300 h-full`}>
                   <div className="flex flex-col h-full">
                     {/* Icon */}
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Icon size={24} className="text-primary-foreground" />
                     </div>
 
                     {/* Content */}
                     <h3 className="text-2xl font-bold text-foreground mb-3">{product.title}</h3>
-                    <p className="text-muted-foreground mb-6 flex-grow">{product.description}</p>
+                    <p className="text-muted-foreground mb-6 grow">{product.description}</p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-6">
