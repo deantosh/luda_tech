@@ -30,7 +30,7 @@ export default function Navigation() {
           >
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <img
-                src="/ludalens-logo.png" // Replace with your logo path
+                src="/ludalens_logo.png" // Replace with your logo path
                 alt="Company Logo"
                 className="w-10 h-10 object-contain" // Adjust size as needed
               />
