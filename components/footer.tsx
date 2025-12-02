@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="font-bold text-lg">
                 <img
-                  src="/ludalens_logo.png"
+                  src="/luda_logo.png"
                   alt="Company Logo"
                   className="w-20 h-10 object-contain"
                 />

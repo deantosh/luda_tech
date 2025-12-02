@@ -30,9 +30,9 @@ export default function Navigation() {
           >
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <img
-                src="/ludalens_logo.png" // Replace with your logo path
+                src="/luda_logo.png"
                 alt="Company Logo"
-                className="w-20 h-10 object-contain" // Adjust size as needed
+                className="w-20 h-10 object-contain"
               />
             </Link>
           </motion.div>
