@@ -32,7 +32,7 @@ export default function Navigation() {
               <img
                 src="/ludalens_logo.png" // Replace with your logo path
                 alt="Company Logo"
-                className="w-50 h-50 object-contain" // Adjust size as needed
+                className="w-20 h-10 object-contain" // Adjust size as needed
               />
             </Link>
           </motion.div>
