@@ -8,7 +8,6 @@ import Footer from '@/components/footer'
 import HeroSection from '@/components/hero-section'
 import FeaturedProducts from '@/components/featured-products'
 import WhyLudaTech from '@/components/why-luda-tech'
-import Testimonials from '@/components/product-benefits'
 import ProductBenefits from '@/components/product-benefits'
 
 export default function Home() {
