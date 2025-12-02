@@ -6,20 +6,24 @@ import { CheckCircle2 } from 'lucide-react'
 export default function WhyLudaTech() {
   const reasons = [
     {
-      title: 'Innovation First',
-      description: 'We push boundaries and explore emerging technologies to create solutions that define the future.',
+      title: 'Innovation-Driven',
+      description:
+        'We leverage advanced technologies and modern engineering practices to deliver forward-thinking digital solutions.',
     },
     {
-      title: 'Reliability',
-      description: 'Enterprise-grade infrastructure and rigorous testing ensure 99.99% uptime for critical systems.',
+      title: 'Enterprise Reliability',
+      description:
+        'Our products are built with robust architecture, rigorous testing, and performance optimization to ensure continuous availability.',
     },
     {
-      title: 'Human-Centric',
-      description: 'Every product is designed with users in mind, balancing powerful features with intuitive interfaces.',
+      title: 'User-Focused Design',
+      description:
+        'Every solution is crafted with a deep understanding of user needs, creating intuitive, seamless, and efficient experiences.',
     },
     {
-      title: 'Scalable Solutions',
-      description: 'From startups to enterprises, our solutions grow with your business needs and ambitions.',
+      title: 'Scalable Architecture',
+      description:
+        'From early-stage startups to global enterprises, our systems are designed to scale with evolving business demands.',
     },
   ]
 
@@ -35,7 +39,7 @@ export default function WhyLudaTech() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Why Choose LuDa Tech?</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're committed to delivering excellence in everything we do.
+            Delivering dependable, scalable, and future-ready technology solutions.
           </p>
         </motion.div>
 
