@@ -1,63 +1,80 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Navigation from '@/components/navigation'
-import Footer from '@/components/footer'
-import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
-import Link from 'next/link'
+import { useState } from "react";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Simulate form submission
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   const contactMethods = [
     {
       icon: Mail,
-      title: 'Email',
-      value: 'info@ludatech.com',
-      description: 'We\'ll get back to you within 24 hours',
-      href: 'mailto:info@ludatech.com',
+      title: "Email",
+      value: "info@ludatech.com",
+      description: "We'll get back to you within 24 hours",
+      href: "mailto:info@ludatech.com",
     },
     {
       icon: Phone,
-      title: 'Phone',
-      value: '+1 (415) 555-0123',
-      description: 'Call us Monday-Friday, 9am-5pm PT',
-      href: 'tel:+14155550123',
+      title: "Phone",
+      value: "+1 (415) 555-0123",
+      description: "Call us Monday-Friday, 9am-5pm PT",
+      href: "tel:+14155550123",
     },
     {
       icon: MapPin,
-      title: 'Office',
-      value: 'San Francisco, CA',
-      description: '123 Innovation Street, San Francisco, CA 94105',
-      href: '#',
+      title: "Office",
+      value: "San Francisco, CA",
+      description: "123 Innovation Street, San Francisco, CA 94105",
+      href: "#",
     },
-  ]
+  ];
 
   return (
     <main className="overflow-hidden">
@@ -76,7 +93,10 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl sm:text-6xl font-bold text-foreground mb-4 text-balance"
           >
-            Get in <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
+            Get in{" "}
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              Touch
+            </span>
           </motion.h1>
 
           <motion.p
@@ -85,37 +105,57 @@ export default function ContactPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have questions? We'd love to hear from you. Send us a message and
+            we'll respond as soon as possible.
           </motion.p>
         </div>
 
         {/* Contact Methods */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* Contact Methods */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
           {contactMethods.map((method, index) => {
-            const Icon = method.icon
+            const Icon = method.icon;
             return (
               <motion.div
                 key={method.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
+                transition={{ delay: 0.15 + index * 0.1 }}
+                className="h-full"
               >
-                <Link href={method.href} className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon size={24} className="text-primary-foreground" />
+                <Link
+                  href={method.href}
+                  className="group block h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/60 
+                     transition-all shadow-sm hover:shadow-md"
+                >
+                  <div
+                    className="w-14 h-14 rounded-xl bg-linear-to-br from-primary to-accent 
+                          flex items-center justify-center mb-6 
+                          group-hover:scale-110 transition-transform"
+                  >
+                    <Icon size={26} className="text-primary-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{method.title}</h3>
-                  <p className="font-medium text-primary mb-2">{method.value}</p>
-                  <p className="text-sm text-muted-foreground">{method.description}</p>
+
+                  <h3 className="text-xl font-semibold text-foreground mb-1">
+                    {method.title}
+                  </h3>
+
+                  <p className="font-medium text-primary mb-2">
+                    {method.value}
+                  </p>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {method.description}
+                  </p>
                 </Link>
               </motion.div>
-            )
+            );
           })}
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-background via-primary/5 to-background">
+      <section className="py-24 px-4 bg-linear-to-b from-background via-primary/5 to-background">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,7 +163,9 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="mb-12"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">Send Us a Message</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Send Us a Message
+            </h2>
             <p className="text-lg text-muted-foreground">
               Fill out the form below and we'll get back to you shortly.
             </p>
@@ -138,7 +180,10 @@ export default function ContactPage() {
           >
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Full Name
               </label>
               <input
@@ -155,7 +200,10 @@ export default function ContactPage() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Email Address
               </label>
               <input
@@ -172,7 +220,10 @@ export default function ContactPage() {
 
             {/* Subject */}
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Subject
               </label>
               <select
@@ -185,7 +236,9 @@ export default function ContactPage() {
               >
                 <option value="">Select a subject</option>
                 <option value="Product Inquiry">Product Inquiry</option>
-                <option value="Enterprise Solutions">Enterprise Solutions</option>
+                <option value="Enterprise Solutions">
+                  Enterprise Solutions
+                </option>
                 <option value="Support">Support</option>
                 <option value="Partnership">Partnership</option>
                 <option value="Job Application">Job Application</option>
@@ -195,7 +248,10 @@ export default function ContactPage() {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -228,7 +284,10 @@ export default function ContactPage() {
               ) : (
                 <>
                   Send Message
-                  <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <Send
+                    size={18}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </>
               )}
             </motion.button>
@@ -242,7 +301,9 @@ export default function ContactPage() {
               exit={{ opacity: 0, y: 10 }}
               className="mt-6 p-4 rounded-lg bg-accent/10 border border-accent/30 text-accent"
             >
-              <p className="font-medium">Thank you for reaching out! We'll get back to you soon.</p>
+              <p className="font-medium">
+                Thank you for reaching out! We'll get back to you soon.
+              </p>
             </motion.div>
           )}
         </div>
@@ -257,7 +318,9 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
             <p className="text-lg text-muted-foreground">
               Find answers to common questions about our products and services.
             </p>
@@ -266,20 +329,20 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               {
-                q: 'What payment methods do you accept?',
-                a: 'We accept all major credit cards, bank transfers, and digital payment methods. For enterprise customers, we also offer custom billing arrangements.',
+                q: "What payment methods do you accept?",
+                a: "We accept all major credit cards, bank transfers,mobile money and digital payment methods. For enterprise customers, we also offer custom billing arrangements.",
               },
               {
-                q: 'Do you offer free trials?',
-                a: 'Yes, most of our products offer a 14-day free trial. No credit card required to get started.',
+                q: "Do you offer free trials?",
+                a: "Yes, most of our products offer a 30-day free trial. No credit card required to get started.",
               },
               {
-                q: 'What is your support response time?',
-                a: 'We typically respond to inquiries within 24 hours. Enterprise customers receive priority support with faster response times.',
+                q: "What is your support response time?",
+                a: "We typically respond to inquiries within 24 hours. Enterprise customers receive priority support with faster response times.",
               },
               {
-                q: 'Can I cancel my subscription anytime?',
-                a: 'Absolutely. You can cancel your subscription at any time without penalties. Your data will be available for export for 30 days after cancellation.',
+                q: "Can I cancel my subscription anytime?",
+                a: "Absolutely. You can cancel your subscription at any time without penalties. Your data will be available for export for 30 days after cancellation.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -299,5 +362,5 @@ export default function ContactPage() {
 
       <Footer />
     </main>
-  )
+  );
 }

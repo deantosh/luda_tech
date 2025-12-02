@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import logo from '@/public/logo.png'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,11 +31,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
           >
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <img
-                src="/luda_logo.png"
-                alt="Company Logo"
-                className="w-20 h-10 object-contain"
-              />
+             <Image src={logo} alt='componay logo' width={100} height={100}/>
             </Link>
           </motion.div>
 
@@ -59,7 +57,7 @@ export default function Navigation() {
                   {isActive(item.href) && (
                     <motion.div
                       layoutId="navbar-underline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary to-accent rounded-full"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ type: 'spring', stiffness: 380, damping: 40 }}
