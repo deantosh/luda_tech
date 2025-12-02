@@ -14,10 +14,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">LD</span>
-              </div>
-              <span className="font-bold text-lg">LuDa Tech</span>
+              <span className="font-bold text-lg">
+                <img
+                  src="/ludalens_logo.png"
+                  alt="Company Logo"
+                  className="w-20 h-10 object-contain"
+                />
+              </span>
             </div>
             <p className="text-sm text-muted-foreground">
               Innovating at the intersection of human creativity and advanced engineering.
@@ -30,17 +33,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  SmartFlow
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  DataSync Pro
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  SecureVault
+                  LuDa Lens
                 </Link>
               </li>
             </ul>
