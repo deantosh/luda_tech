@@ -29,10 +29,11 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
           >
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">LD</span>
-              </div>
-              <span className="font-bold text-xl text-foreground hidden sm:inline">LuDa Tech</span>
+              <img
+                src="/ludalens-logo.png" // Replace with your logo path
+                alt="Company Logo"
+                className="w-10 h-10 object-contain" // Adjust size as needed
+              />
             </Link>
           </motion.div>
 
