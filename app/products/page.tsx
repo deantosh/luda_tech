@@ -17,7 +17,7 @@ const PRODUCTS = [
       "Luda Lens lets you snap any handwritten or printed document and transform it into clean, structured digital data in seconds. From notes and invoices to receipts, forms, and contracts, the app intelligently reads and processes every detail using advanced AI-powered OCR.Simply capture a page, and Luda Lens automatically extracts text, detects key fields, and organizes everything into ready-to-use formats like Excel, PDF, or structured text. You can even define custom fields—such as dates, names, totals, line items, or signatures—and Luda Lens will accurately locate and extract them for you. Whether you're digitizing paperwork, streamlining business workflows, or converting messy documents into actionable data, Luda Lens delivers fast, precise, and automated document processing that brings clarity to every page.",
     category: "Data Capture",
     tags: ["Web", "AI", "Automation"],
-    image: "/splash.png",
+    image: "/ludalens.png",
     features: [
       "AI-powered document automation",
       "Smart OCR processing for handwritten and printed text",
