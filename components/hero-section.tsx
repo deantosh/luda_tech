@@ -30,9 +30,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
         >
-          Digital Products That Transform <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Possibilities</span>
+          Shaping the Future Through Innovative <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Products</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -42,7 +42,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3 }}
           className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto text-balance leading-relaxed"
         >
-          At LuDa Tech, we craft innovative software solutions for consumers and enterprises. We blend human creativity with cutting-edge engineering to build the future.
+          At LuDa Tech, we design and develop versatile software solutions that solve real problems, unlock new opportunities, and create lasting impact across industries.
         </motion.p>
 
         {/* CTAs */}
