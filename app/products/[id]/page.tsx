@@ -228,21 +228,25 @@ export default function ProductDetailPage() {
             </p>
           </motion.div>
 
+          {/* Product Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="rounded-2xl overflow-hidden bg-muted border border-border"
+            className="rounded-2xl overflow-hidden bg-muted border border-border p-6"
           >
-            {/* Maintain aspect ratio without forcing height */}
-            <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/2]">
-              <Image
-                src={product.image || "/placeholder.svg"}
-                alt={product.title}
-                fill
-                priority
-                className="object-contain"
-              />
+            <div className="relative w-full bg-background rounded-xl flex items-center justify-center">
+              <div className="relative w-full max-w-3xl">
+                <Image
+                  src={product.image || "/placeholder.svg"}
+                  alt={product.title}
+                  width={1600} // Ensures high-resolution
+                  height={1200}
+                  quality={100} // Prevent compression blur
+                  className="w-full h-auto object-contain mx-auto"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
         </div>
