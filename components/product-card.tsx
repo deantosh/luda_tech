@@ -14,10 +14,12 @@ export default function ProductCard({ product }: { product: any }) {
       <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300 flex flex-col">
         {/* Image */}
         <div className="w-full h-48 rounded-lg overflow-hidden mb-6 bg-muted">
-          <img
+          <Image
             src={product.image || "/placeholder.svg"}
             alt={product.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            height={80}
+            width={80}
+            className="w-auto h-auto group-hover:scale-105 transition-transform duration-300 object-contain mx-auto mt-10"
           />
         </div>
 

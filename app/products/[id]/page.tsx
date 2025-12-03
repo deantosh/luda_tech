@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const PRODUCTS = [
   {
@@ -227,18 +228,22 @@ export default function ProductDetailPage() {
             </p>
           </motion.div>
 
-          {/* Product Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="rounded-2xl overflow-hidden bg-muted border border-border"
           >
-            <img
-              src={product.image || "/placeholder.svg"}
-              alt={product.title}
-              className="w-full h-150 object-cover"
-            />
+            {/* Maintain aspect ratio without forcing height */}
+            <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/2]">
+              <Image
+                src={product.image || "/placeholder.svg"}
+                alt={product.title}
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
