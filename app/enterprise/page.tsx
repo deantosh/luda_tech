@@ -3,60 +3,75 @@
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle2, Zap, Shield, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Zap, Shield, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 
 export default function EnterprisePage() {
   const solutions = [
     {
       icon: Zap,
-      title: 'Custom Software Development',
-      description: 'Tailored software solutions built to your exact specifications. Our expert team works closely with you to deliver enterprise-grade applications.',
-      benefits: ['Scalable architecture', 'Security-first approach', 'Maintenance & support'],
+      title: 'AI-Powered Data Extraction',
+      description:
+        'LuDa Lens automates the extraction of data from scanned or photographed forms, eliminating manual entry and reducing errors for enterprise teams.',
+      benefits: [
+        'High-accuracy OCR + AI parsing',
+        'PDF/Excel export',
+        'Integration with existing company databases',
+      ],
     },
     {
       icon: Shield,
-      title: 'Cloud Infrastructure',
-      description: 'Secure, reliable cloud infrastructure powered by industry-leading providers. Deploy globally with 99.99% uptime SLA.',
-      benefits: ['Multi-region deployment', 'Disaster recovery', 'Auto-scaling capabilities'],
+      title: 'Workflow Automation (Expanding Soon)',
+      description:
+        'We are building tools that simplify repetitive processes, enhance efficiency, and support smarter decision-making for modern businesses.',
+      benefits: [
+        'Custom workflow design',
+        'End-to-end automation',
+        'Seamless integration capabilities',
+      ],
     },
     {
-      icon: TrendingUp,
-      title: 'Data & Analytics',
-      description: 'Transform your data into actionable insights. Advanced analytics and BI solutions to drive business intelligence.',
-      benefits: ['Predictive modeling', 'Real-time dashboards', 'Custom reporting'],
+      icon: Lightbulb,
+      title: 'Future Digital Solutions',
+      description:
+        'As we grow, LuDa Tech aims to deliver a range of intelligent products — spanning agriculture, finance, retail, and more — all powered by applied AI.',
+      benefits: [
+        'Industry-focused innovation',
+        'Early access to beta tools',
+        'Designed for scalability',
+      ],
     },
   ]
 
   const industries = [
-    { name: 'Financial Services', icon: '💼' },
+    { name: 'Logistics', icon: '💼' },
     { name: 'Healthcare', icon: '🏥' },
-    { name: 'Retail & E-commerce', icon: '🛍️' },
-    { name: 'Manufacturing', icon: '🏭' },
-    { name: 'Energy & Utilities', icon: '⚡' },
+    { name: 'Retail', icon: '🛍️' },
+    { name: 'Finance', icon: '🏭' },
+    { name: 'Energy', icon: '⚡' },
     { name: 'Government', icon: '🏛️' },
   ]
 
   const process = [
     {
       step: '01',
-      title: 'Discovery & Assessment',
-      description: 'We analyze your current systems, identify challenges, and define clear objectives for your enterprise solution.',
+      title: 'Understanding Your Needs',
+      description: 'We analyze your workflows, pain points, and data processes to uncover opportunities where automation or AI can deliver measurable value.',
     },
     {
       step: '02',
-      title: 'Strategic Planning',
-      description: 'Our architects create a comprehensive roadmap aligned with your business goals and technical requirements.',
+      title: 'Solution Design',
+      description: 'We craft a tailored plan — optimizing LuDa Lens for your use case or outlining new tools that align with your operational goals.',
     },
     {
       step: '03',
-      title: 'Implementation',
-      description: 'Our expert team builds, deploys, and integrates your solution with seamless handoff to your operations team.',
+      title: 'Deployment & Integration',
+      description: 'We deploy the solution, integrate it into your existing systems, and ensure your team is fully supported during the transition.',
     },
     {
       step: '04',
-      title: 'Support & Optimization',
-      description: 'Ongoing management, optimization, and support to ensure your solution continues delivering value.',
+      title: 'Continuous Support',
+      description: 'We provide ongoing enhancements, maintenance, and optional feature expansions as your business evolves.',
     },
   ]
 
@@ -86,9 +101,9 @@ export default function EnterprisePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance"
           >
-            Solutions Designed for <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Enterprise Scale</span>
+            Engineering Scalable Tools for <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Modern Enterprises</span>
           </motion.h1>
 
           <motion.p
@@ -97,7 +112,7 @@ export default function EnterprisePage() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto text-balance leading-relaxed"
           >
-            Empower your organization with custom software, cloud infrastructure, and data solutions that grow with your business.
+            At LuDa, we’re developing a suite of intelligent tools that help organizations streamline processes, improve accuracy, and unlock new efficiencies—starting with real AI-powered products already in testing and rollout.
           </motion.p>
 
           <motion.div
@@ -250,7 +265,7 @@ export default function EnterprisePage() {
               Ready to Transform Your Enterprise?
             </h2>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Let's discuss how LuDa Tech can help you achieve your business objectives with innovative solutions tailored to your needs.
+              Let's discuss how LuDa can help you achieve your business objectives with innovative solutions tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
