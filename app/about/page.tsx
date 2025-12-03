@@ -3,66 +3,56 @@
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
 import { motion } from 'framer-motion'
-import { Users, Lightbulb, Target, Heart } from 'lucide-react'
+import { Users, Lightbulb, Target, Heart, Shield } from 'lucide-react'
 
 export default function AboutPage() {
   const values = [
     {
       icon: Lightbulb,
       title: 'Innovation',
-      description: 'We embrace emerging technologies and push boundaries to create solutions that define the future.',
+      description: 'We embrace emerging technologies and creative thinking to solve real-world challenges.',
     },
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'We believe great products come from diverse teams working together with shared vision and purpose.',
+      description: 'We achieve more by working together — across teams, clients, and communities.',
     },
     {
       icon: Target,
       title: 'Excellence',
-      description: 'We maintain the highest standards in code quality, design, and customer service.',
+      description: 'We set the highest standards in software, design, and client experience.',
     },
     {
       icon: Heart,
       title: 'Impact',
-      description: 'We measure success by the positive difference our products make in users\' lives.',
+      description: 'We create products that deliver tangible benefits and improve workflows for our users.',
     },
-  ]
+    {
+      icon: Shield,
+      title: 'Integrity',
+      description: 'We operate transparently, responsibly, and ethically in everything we build and deliver.',
+    },
+  ]  
 
   const team = [
     {
-      name: 'Alexandra Chen',
-      role: 'Co-Founder & CEO',
-      bio: 'Former engineering leader at global tech companies with 15+ years in software development.',
+      name: 'Deantosh Daiddoh',
+      role: 'Co-Founder',
+      bio: 'Engineer with a background in oil & gas and finance, now building intelligent digital solutions that solve real operational challenges for modern businesses.',
       image: '/placeholder.svg?key=1a2b3c',
     },
     {
-      name: 'Marcus Rivera',
-      role: 'Co-Founder & CTO',
+      name: 'Lucky Archibong',
+      role: 'Co-Founder',
       bio: 'Architect of distributed systems with passion for scalable, secure infrastructure.',
       image: '/placeholder.svg?key=2c3d4e',
-    },
-    {
-      name: 'Sophia Patel',
-      role: 'VP of Product',
-      bio: 'Product strategist focused on translating user needs into innovative solutions.',
-      image: '/placeholder.svg?key=3d4e5f',
-    },
-    {
-      name: 'James Wilson',
-      role: 'VP of Design',
-      bio: 'Design leader committed to creating intuitive, beautiful user experiences.',
-      image: '/placeholder.svg?key=4e5f6g',
     },
   ]
 
   const milestones = [
-    { year: '2018', event: 'LuDa Tech founded with vision for innovative software solutions' },
-    { year: '2019', event: 'Launched first flagship product, SmartFlow' },
-    { year: '2020', event: 'Expanded to enterprise market with DataSync Pro' },
-    { year: '2021', event: 'Reached 10,000+ users across 50+ countries' },
-    { year: '2022', event: 'Launched SecureVault and InsightAI' },
-    { year: '2024', event: 'Recognized as industry leader in innovative software solutions' },
+    { year: '2025', event: 'LuDa founded with vision to create AI-driven digital tools' },
+    { year: '2025', event: 'Launched LuDa Lens, our AI-powered form data extraction tool' },
+    { year: '2026+', event: 'Expanding our product suite to solve diverse workflow challenges' },
   ]
 
   return (
@@ -92,7 +82,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance"
           >
-            Transforming Ideas Into <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Digital Reality</span>
+            Building AI-Powered Tools That <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Transform Workflows</span>
           </motion.h1>
 
           <motion.p
@@ -101,7 +91,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-balance leading-relaxed"
           >
-            Founded in 2018, LuDa Tech represents the convergence of human creativity and engineering excellence. We're passionate about building products that solve real problems.
+            At LuDa Tech, we design and develop intelligent solutions like <strong>LuDa Lens</strong> to extract data, automate processes, and unlock actionable insights. Our focus is creating versatile products that make work smarter and more efficient.
           </motion.p>
         </div>
       </section>
@@ -119,7 +109,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To create innovative digital products that empower individuals and organizations to achieve more. We're committed to building solutions that are intuitive, reliable, and transformative.
+                To create a future where technology enhances human potential, making innovation accessible, practical, and transformative for individuals and organizations worldwide.
               </p>
             </motion.div>
 
@@ -142,6 +132,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +145,8 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Cards */}
+          <div className="flex flex-wrap justify-center gap-6">
             {values.map((value, index) => {
               const Icon = value.icon
               return (
@@ -163,7 +155,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all"
+                  className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all w-full sm:w-80"
                 >
                   <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center mb-4">
                     <Icon size={24} className="text-primary-foreground" />
@@ -177,9 +169,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+
       {/* Team Section */}
       <section className="py-24 px-4 bg-linear-to-b from-background via-accent/5 to-background">
         <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -192,14 +186,15 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Team Cards */}
+          <div className="flex flex-wrap justify-center gap-6">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center w-full sm:w-80"
               >
                 <div className="relative rounded-2xl overflow-hidden mb-4 bg-muted h-64 group">
                   <img
@@ -216,6 +211,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
 
       {/* Timeline Section */}
       <section className="py-24 px-4">
