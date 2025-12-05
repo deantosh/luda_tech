@@ -56,24 +56,24 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      value: "info@ludatech.com",
+      value: "support@lu-da.tech",
       description: "We'll get back to you within 24 hours",
-      href: "mailto:info@ludatech.com",
+      href: "mailto:support@lu-da.tech",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (415) 555-0123",
+      value: "+254 (101) 160-919",
       description: "Call us Monday-Friday, 9am-5pm PT",
-      href: "tel:+14155550123",
+      href: "tel:+254101160919",
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "San Francisco, CA",
-      description: "123 Innovation Street, San Francisco, CA 94105",
+      value: "Remote First",
+      description: "Our team operates remotely, and we are not maintaining a physical office at the moment.",
       href: "#",
-    },
+    }
   ];
 
   return (

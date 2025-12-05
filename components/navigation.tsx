@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import logo from '@/public/logo.png'
+
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,10 +28,10 @@ export default function Navigation() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Image
-                src={logo}
+                src='/logo/luda.png'
                 alt="company logo"
-                width={120}    // <-- matches footer size
-                height={32}
+                width={60}
+                height={30}
                 className="object-contain"
               />
             </Link>
