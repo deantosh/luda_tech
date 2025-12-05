@@ -1,12 +1,10 @@
-'use client'
-
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-
+import logo from '@/public/logo.png'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,13 +23,17 @@ export default function Navigation() {
     <nav className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-             <Image src='logo/luda.png' alt='company logo' width={100} height={100}/>
+              <Image
+                src={logo}
+                alt="company logo"
+                width={120}    // <-- matches footer size
+                height={32}
+                className="object-contain"
+              />
             </Link>
           </motion.div>
 
@@ -54,6 +56,7 @@ export default function Navigation() {
                   }`}
                 >
                   {item.name}
+
                   {isActive(item.href) && (
                     <motion.div
                       layoutId="navbar-underline"
@@ -114,6 +117,7 @@ export default function Navigation() {
                 </Link>
               </motion.div>
             ))}
+
             <Link
               href="/contact"
               className="block mt-3 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium text-center"
