@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { Github, Linkedin, Twitter } from 'lucide-react'
+import Image from 'next/image'
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -15,11 +17,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="font-bold text-lg">
-                <img
-                  src="/luda_logo.png"
-                  alt="Company Logo"
-                  className="w-20 h-10 object-contain"
-                />
+                <Image src='/logo/luda.png' alt="Company Logo" width={80} height={40} style={{ objectFit: 'contain' }}/>
               </span>
             </div>
             <p className="text-sm text-muted-foreground">

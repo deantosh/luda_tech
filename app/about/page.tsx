@@ -38,8 +38,8 @@ export default function AboutPage() {
     {
       name: 'Deantosh Daiddoh',
       role: 'Co-Founder',
-      bio: 'Engineer with a background in oil & gas and finance, now building intelligent digital solutions that solve real operational challenges for modern businesses.',
-      image: '/placeholder.svg?key=1a2b3c',
+      bio: 'Experienced engineer with a broad technical and operational background, driving strategic digital initiatives that create measurable impact.',
+      image: '/team/deantosh.png?key=1a2b3c',
     },
     {
       name: 'Lucky Archibong',
@@ -91,7 +91,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-balance leading-relaxed"
           >
-            At LuDa Tech, we design and develop intelligent solutions like <strong>LuDa Lens</strong> to extract data, automate processes, and unlock actionable insights. Our focus is creating versatile products that make work smarter and more efficient.
+            At LuDa, we design and develop intelligent solutions like <strong>LuDa Lens</strong> to extract data, automate processes, and unlock actionable insights. Our focus is creating versatile products that make work smarter and more efficient.
           </motion.p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To create a future where technology enhances human potential, making innovation accessible, practical, and transformative for individuals and organizations worldwide.
+              To build intelligent digital tools that solve real-world challenges, empower businesses to work smarter, and unlock new possibilities through practical and accessible innovation.
               </p>
             </motion.div>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A world where technology seamlessly integrates with human potential, creating opportunities for everyone. We envision a future where innovation is accessible and transformative for all.
+              To shape a future where advanced technology enhances everyday life, enabling people and organizations across the world to achieve more with simplicity, clarity, and confidence.
               </p>
             </motion.div>
           </div>
@@ -182,7 +182,7 @@ export default function AboutPage() {
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Leadership Team</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experienced leaders driving innovation and excellence at LuDa Tech.
+              Experienced leaders driving innovation and excellence at LuDa.
             </p>
           </motion.div>
 
@@ -196,11 +196,11 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center w-full sm:w-80"
               >
-                <div className="relative rounded-2xl overflow-hidden mb-4 bg-muted h-64 group">
+                <div className="relative rounded-2xl overflow-hidden mb-4 bg-muted group">
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
