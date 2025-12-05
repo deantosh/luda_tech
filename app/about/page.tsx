@@ -44,8 +44,8 @@ export default function AboutPage() {
     {
       name: 'Lucky Archibong',
       role: 'Co-Founder',
-      bio: 'Architect of distributed systems with passion for scalable, secure infrastructure.',
-      image: '/placeholder.svg?key=2c3d4e',
+      bio: 'Creating applications that simplify work and elevate everyday life.',
+      image: '/team/luckySmooth.jpg',
     },
   ]
 
