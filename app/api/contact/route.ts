@@ -1,29 +1,40 @@
-// import { NextResponse } from "next/server";
-// // import { Resend } from "resend";
+import nodemailer from "nodemailer";
+import { NextRequest } from "next/server";
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
 
-// export async function POST(req: Request) {
-//   try {
-//     const { name, email, subject, message } = await req.json();
+export async function POST(req: NextRequest) {
+  try {
+    const { name, email, subject, message } = await req.json();
 
-//     await resend.emails.send({
-//       from: "Luda Tech Contact <no-reply@lu-da.tech>",
-//       to: "info@lu-da.tech",
-//       subject: `[Contact Form] ${subject}`,
-//       html: `
-//         <h2>New Contact Form Message</h2>
-//         <p><strong>Name:</strong> ${name}</p>
-//         <p><strong>Email:</strong> ${email}</p>
-//         <p><strong>Subject:</strong> ${subject}</p>
-//         <p><strong>Message:</strong></p>
-//         <p>${message.replace(/\n/g, "<br/>")}</p>
-//       `,
-//     });
+    // Create SMTP transporter (example uses Brevo)
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
-//     return NextResponse.json({ success: true });
-//   } catch (error) {
-//     console.error("Email error:", error);
-//     return NextResponse.json({ success: false }, { status: 500 });
-//   }
-// }
+    await transporter.sendMail({
+      from: `"${name}" <support@lu-da.tech>`, // Your Truehost email
+      to: "support@lu-da.tech",              // Where you receive messages
+      subject: `New Contact Form: ${subject}`,
+      html: `
+        <h2>New Message From Website</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return new Response(JSON.stringify({ error: "Email failed" }), { status: 500 });
+  }
+}
