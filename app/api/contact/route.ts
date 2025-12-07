@@ -18,8 +18,9 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: `"${name}" <support@lu-da.tech>`, // Your Truehost email
-      to: "support@lu-da.tech",              // Where you receive messages
+      from: `"LuDa Contact" <support@lu-da.tech>`,
+      to: "support@lu-da.tech",  
+      replyTo: email,
       subject: `New Contact Form: ${subject}`,
       html: `
         <h2>New Message From Website</h2>
